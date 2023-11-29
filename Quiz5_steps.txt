@@ -1,0 +1,15 @@
+Steps:
+1. Read Train JSON 
+2. Consider only title and abstractText columns as input
+3. meshMajor column is the output
+4. Since the output is the array of labels, I used MultiLabelBinarizer
+5. Y column has around 20000 columns and it took so much to fir and classify. 
+6. I used sparse_output=True to form a sparse matrix
+7. For classification, I used RandomForestClassifier and TfidfVectorizer
+8. Added the parameter stop_words='english' to ignore common words like, 'the',
+'and', etc
+9. Read Test JSON
+10. With the classifier, I tried to fit the test data
+11. Calculated accuracy, micro precision, micro recall and F1 score
+12. Read Judge JSON
+13. Predict the labels and add it to a JSON file
